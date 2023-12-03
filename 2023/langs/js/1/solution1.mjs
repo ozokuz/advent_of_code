@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cwd } from "node:process";
 
-const filePath = join(cwd(), "..", "input.txt");
+const filePath = join(cwd(), "..", "..", "..", "inputs", "1.txt");
 const contents = await readFile(filePath, "utf-8");
 const calibrationData = contents.split("\n").map((line) => line.split(""));
 const numbers = "1234567890".split("");

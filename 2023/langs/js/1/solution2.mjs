@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cwd } from "node:process";
 
-const filePath = join(cwd(), "..", "input.txt");
+const filePath = join(cwd(), "..", "..", "..", "inputs", "1.txt");
 const contents = await readFile(filePath, "utf-8");
 const calibrationData = contents.split("\n");
 const numbers = "1234567890".split("");
@@ -27,7 +27,6 @@ for (const value of calibrationData) {
   for (const test of tests) {
     const pos = value.indexOf(test);
     if (pos < 0) continue;
-    console.log(value, test);
     if (firstPos < pos) continue;
     firstPos = pos;
     first = test;
